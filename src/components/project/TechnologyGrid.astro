@@ -4,11 +4,11 @@ const { columns } = Astro.props;
 ---
 
 <section class="scroll-mt-24" id="services">
-  <div class="px-8 md:px-12 py-12 max-w-2xl mx-auto">
+  <div class="pt-4 pb-12 max-w-4xl mx-auto">
     <!-- <div class="col-span-full lg:col-span-2 w-full rounded-4xl h-full items-center inline-flex text-black">
       <h2 class="text-3xl tracking-tighter font-light">What's on tap.</h2>
     </div> -->
-    <div class={`grid grid-cols-1 gap-px mt-8 ${columns.length === 1 ? 'md:grid-cols-1' : columns.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+    <div class={`grid grid-cols-2 gap-px mt-8 ${columns.length === 1 ? 'md:grid-cols-1' : columns.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
       {columns.map(column => (
         <div class="p-8 bg-white rounded-3xl">
           <div class="inline-flex items-center border-b w-full border-white/10">
