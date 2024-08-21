@@ -1,0 +1,67 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TechnologyGrid from "@/components/project/TechnologyGrid.astro";
+const columns = [
+  {
+    title: "Tech stack",
+    items: ["Godot Game Engine", "itch.io"],
+  },
+  {
+    title: "Design",
+    items: ["Photoshop", "Illustrator"],
+  },
+  // Add more columns here if needed
+].map((column) => ({
+  ...column,
+  items: column.items.map((title) => ({ title })),
+}));
+---
+
+<BaseLayout>
+  <section class="overflow-hidden relative">
+    <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto relative">
+      <div>
+        <!-- <span
+              class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1 text-sm leading-6 text-black ring-1 ring-zinc-200 bg-white ring-inset"
+            >
+              <p>1  Spots available</p>
+              <div class="h-2 w-2 rounded-full bg-black border-2 border-black "></div>
+      
+              <div class="h-2 w-2 rounded-full border-black border-2 "></div>
+            </span> -->
+        <h2 class="text-5xl mt-12 tracking-tighter font-normal text-black">
+          Ipland
+        </h2>
+      </div>
+      <ul
+        class="grid grid-cols-1 text-base text-zinc-500 lg:grid-cols-2 max-w-4xl gap-2 group h-full mt-4"
+      >
+        <em class="col-span-full text-2xl mb-8">
+          <p>
+            Experience island life in pixelated RPG form with your favorite
+            characters
+          </p>
+        </em>
+        <iframe
+          class="mb-2 px-4 py-2 w-full"
+          src="https://itch.io/embed/2892272"
+          width="552"
+          height="167"
+          frameborder="0"
+        >
+        </iframe>
+        <div>
+          Link to the website: <a
+            href="https://animovie.vercel.app"
+            class="text-black underline">https://animovie.vercel.app</a
+          >
+          <p>
+            The library that utilizes data from IMDB and TMDB. It is developed
+            using React.js, Express.js, MongoDB, and PostgresDB technologies.
+          </p>
+        </div>
+      </ul>
+      <TechnologyGrid columns={columns} />
+    </div>
+  </section>
+</BaseLayout>

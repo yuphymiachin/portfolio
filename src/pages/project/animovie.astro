@@ -1,46 +1,211 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import TechnologyGrid from "@/components/project/TechnologyGrid.astro";
+const columns = [
+  {
+    title: 'Tech stack',
+    items: [
+      "React.js",
+      "Express.js",
+      "Auth0",
+      "Vercel"
+    ]
+  },
+  {
+    title: 'Database',
+    items: [
+      "PostgreSQL",
+      "MongoDB"
+    ]
+  }
+  // Add more columns here if needed
+].map(column => ({
+  ...column,
+  items: column.items.map(title => ({ title }))
+}));
 ---
 
 <BaseLayout>
-    <section class="overflow-hidden relative ">
-        <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto relative">
-          <div>
-            <!-- <span
-              class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1 text-sm leading-6 text-black ring-1 ring-zinc-200 bg-white ring-inset"
-            >
-              <p>1  Spots available</p>
-              <div class="h-2 w-2 rounded-full bg-black border-2 border-black "></div>
-      
-              <div class="h-2 w-2 rounded-full border-black border-2 "></div>
-            </span> -->
-            <h2 class="text-5xl mt-12 tracking-tighter font-normal text-black">
-              AniMovie
-            </h2>
-          </div>
-          <!-- <ul
-            class="grid grid-cols-1 text-base text-zinc-500 lg:grid-cols-2 max-w-xl gap-2 group h-full mt-12"
-          >
-            <div>
-              <p>
-                Minimal streamlines the design process with a fixed monthly rate and
-                limitless design requests.
-              </p>
-            </div>
-            <div>
-              <p>
-                Say goodbye to phone calls and extensive contracts; reach out to
-                minimal directly at any time.
-              </p>
-            </div>
-            <em class="col-span-full text-sm mt-8">
-              <p>
-                Embrace flexibility, halt or terminate your subscription whenever you
-                need. <span class="block text-black">⏤ No questions asked.</span>
-              </p>
-            </em>
-          </ul> -->
+  <section class="overflow-hidden relative">
+    <div class="px-8 md:px-12 py-24 max-w-4xl mx-auto relative">
+      <h2 class="text-5xl mt-12 mb-6 tracking-tighter font-normal text-black">
+        AniMovie
+      </h2>
+
+      <ul
+        class="grid grid-cols-1 text-base text-zinc-500 lg:grid-cols-2 max-w-4xl gap-2 group h-full mt-4"
+      >
+        <em class="col-span-full text-2xl mb-8">
+          <p>An online library of animation movies.</p>
+        </em>
+        <div>
+          Link to the website: <a href="https://animovie.vercel.app" class="text-black underline">https://animovie.vercel.app</a>
+          <p>
+            The library that utilizes data from IMDB and TMDB. It is developed using React.js, Express.js, MongoDB, and PostgresDB technologies.          </p>
         </div>
-      </section>
-      
+      </ul>
+
+      <TechnologyGrid columns={columns} />
+
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Homepage:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieHomePage.png"
+          alt="AniMovieHomePage"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        The homepage represents a strong message and a searching bar which
+        indicates the main function of this website, with the background of a
+        sliding show of some famous animation movies.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Top Movies Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieTopMovie.png"
+          alt="AniMovieTopMovie"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        This page generates the top 30 animation movies based on the public databases. Users can choose different types of movies by clicking the multiple tags on the top.
+      </p>
+      <p class="text-l text-zinc-500 mt-4">
+        Users can slide to see the 30 searching results and jump to the movie info page by clicking one of the movie images.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Top Person Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieTopPerson.png"
+          alt="AniMovieTopPerson"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        This page generates the top 30 directors, composers, writers and producers based on the public databases. Users can manipulate the searching results by clicking the multiple tags on the top.
+      </p>
+      <p class="text-l text-zinc-500 mt-4">
+        The results would be shown as a list of 30 top persons ranked by the average rating of their works. The 3 top ranked movies from each person would be shown on the right for user to browse.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Person Info Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieMovieInfo.png"
+          alt="AniMovieMovieInfo"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        This page reads detailed information of one specific movie from the databases. The info also includes a list of staff names of different roles.
+      </p>
+      <p class="text-l text-zinc-500 mt-4">
+        Below the poster of the movie, it shows a list of comments from different users.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Movie Info Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMoviePersonInfo.png"
+          alt="AniMoviePersonInfo"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        A simple archive of the specific staff person, the page includes the birth and death year, primary profession and all the movies sorted by different roles.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Search Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieSearch.png"
+          alt="AniMovieSearch"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        This page offers a search engine for user to search directly by the movie/person's name, genre, language, release date and runtime.
+      </p>
+      <p class="text-l text-zinc-500 mt-4">
+        A list of results would shown according the input keywords and other limits the users choose. It will also show the rating of each result so that the users can pick their favourite movies to watch easily.
+      </p>
+
+      <div class="text-l text-zinc-500 mt-8">
+        <em>Login Page:</em>
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieLogin.png"
+          alt="AniMovieLogin"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        The login service is offered by auth0 to enhance the security of users' account info.
+      </p>
+      <p class="text-l text-zinc-500 mt-4">
+        Once logged in, users can click the like button on the Movie Info Page, and leave the comments below.
+      </p>
+      <a
+        class="block relative mt-4 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieMovieInfoLoggedIn.png"
+          alt="AniMovieMovieInfoLoggedIn"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <a
+        class="block relative mt-4 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/AniMovieRecommendation.png"
+          alt="AniMovieRecommendation"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <p class="text-l text-zinc-500 mt-4">
+        Based on the users' liked movies, a list of personlized recommendations would be generated for the users on the Top Movie Page.
+      </p>
+    </div>
+  </section>
 </BaseLayout>
