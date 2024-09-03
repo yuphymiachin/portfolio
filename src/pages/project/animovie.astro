@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import TechnologyGrid from "@/components/project/TechnologyGrid.astro";
 const columns = [
   {
-    title: 'Tech Stacks:',
+    title: 'Tech Stacks',
     items: [
       "React.js",
       "Express.js",
@@ -12,7 +12,7 @@ const columns = [
     ]
   },
   {
-    title: 'Databases:',
+    title: 'Databases',
     items: [
       "PostgreSQL",
       "MongoDB"
@@ -35,13 +35,14 @@ const columns = [
       <div
         class="grid grid-cols-1 text-base text-zinc-500 lg:grid-cols-1 max-w-4xl gap-2 group h-full mt-4"
       >
-        <em class="col-span-full text-xl mb-8">
-          <p>An online library of animation movies.</p>
+        <em class="col-span-full text-2xl mb-8">
+          <p>A collection of the best animation movies.</p>
         </em>
         <div>
           Link to the website: <a href="https://animovie.vercel.app" class="text-black underline">https://animovie.vercel.app</a>
           <p class="mt-4">
-            The library utilizes data from IMDB and TMDB. It is developed using React.js for frontend, Express.js for RESTful API, Auth0 for login authentication, Vercel for deployment, MongoDB and PostgresDB for data storage.          </p>
+            AniMovie is an online library of animation movies utilizes data from IMDB and TMDB. It is developed using React.js for frontend, Express.js for RESTful API, Auth0 for login authentication, Vercel for deployment, MongoDB and PostgresDB for data storage.
+          </p>
         </div>
       </div>
 

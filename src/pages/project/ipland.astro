@@ -3,11 +3,11 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import TechnologyGrid from "@/components/project/TechnologyGrid.astro";
 const columns = [
   {
-    title: "Tech stack",
+    title: "Tech Stacks",
     items: ["Godot Game Engine", "itch.io"],
   },
   {
-    title: "Design",
+    title: "Design Tools",
     items: ["Photoshop", "Illustrator"],
   },
   // Add more columns here if needed
@@ -19,50 +19,136 @@ const columns = [
 
 <BaseLayout>
   <section class="overflow-hidden relative">
-    <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto relative">
+    <div class="px-8 md:px-12 py-24 max-w-4xl mx-auto relative">
       <div>
-        <!-- <span
-              class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1 text-sm leading-6 text-black ring-1 ring-zinc-200 bg-white ring-inset"
-            >
-              <p>1  Spots available</p>
-              <div class="h-2 w-2 rounded-full bg-black border-2 border-black "></div>
-      
-              <div class="h-2 w-2 rounded-full border-black border-2 "></div>
-            </span> -->
         <h2 class="text-5xl mt-12 tracking-tighter font-normal text-black">
           Ipland
         </h2>
       </div>
-      <ul
+      <div
         class="grid grid-cols-1 text-base text-zinc-500 lg:grid-cols-2 max-w-4xl gap-2 group h-full mt-4"
       >
         <em class="col-span-full text-2xl mb-8">
-          <p>
-            Experience island life in pixelated RPG form with your favorite
-            characters
-          </p>
+          <p>An island life with your favorite characters.</p>
         </em>
-        
-        <!-- <div>
-          Link to the website: <a
+        <div>Link to the game:</div>
+      </div>
+
+      <iframe
+        class="mb-2 px-4 py-2 w-full"
+        src="https://itch.io/embed/2892272"
+        width="552"
+        height="167"
+        frameborder="0"
+      >
+      </iframe>
+
+      <div
+        class="grid grid-cols-1 text-base text-zinc-500 max-w-4xl gap-2 group h-full mt-4"
+      >
+        <div>
+          Ipland is an online life simulation game developed by Godot game
+          engine. It's an <b class="text-zinc-700">OPEN-SOURCE</b> project, and we
+          welcome everyone to contribute to it. Simple graph editing skill is needed.
+        </div>
+        <div>
+          Here’s a tutorial on YouTube (<a
             href="https://animovie.vercel.app"
             class="text-black underline">https://animovie.vercel.app</a
-          >
-          <p>
-            The library that utilizes data from IMDB and TMDB. It is developed
-            using React.js, Express.js, MongoDB, and PostgresDB technologies.
-          </p>
-        </div> -->
-      </ul>
-      <iframe
-          class="mb-2 px-4 py-2 w-full"
-          src="https://itch.io/embed/2892272"
-          width="552"
-          height="167"
-          frameborder="0"
-        >
-        </iframe>
+          >) introducing how to add a character to the game. We want to ensure
+          that everyone can have their favourite characters on their secret
+          island.
+        </div>
+      </div>
+
       <TechnologyGrid columns={columns} />
+
+
+      <div class="text-xl text-zinc-500 mt-4">
+        <em>Overview:</em>
+      </div>
+      <div class="text-l text-zinc-500 mt-4">
+        Ipland brings together popular characters from well-known animations and
+        games. Players will host their own island, and invite multiple
+        characters to visit. They can interact with their favorite characters
+        and try to ask them stay longer. It's a serene space where players can
+        enjoy the tranquility of island life and the joy of friendship.
+      </div>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/LogoIpland.png"
+          alt="LogoIpland.png"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+
+      <div class="text-xl text-zinc-500 mt-12">
+        <em>How to play:</em>
+      </div>
+      <p class="text-l text-zinc-500 mt-4">
+        The player need to collect 4 types of resources to host the guests.
+        After player has collected 10 apples, 4 coffee beans, 6 coconuts and 8
+        firewoods, a random guest will be invited to visit the island. If the
+        player want to invite more guests, more resources will be needed.
+      </p>
+
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/IplandResources.png"
+          alt="IplandResources"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+
+      <p class="text-l text-zinc-500 mt-6">
+        The shop will display the amount of resources the player has already
+        collected. The player can go to the shop and check how much more is
+        needed to invite the next guest.
+      </p>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/IplandShop.png"
+          alt="IplandShop"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+
+      <p class="text-l text-zinc-500 mt-6">
+        When a guest visits, the player can start a conversation with them. The
+        content of the conversations are generated by AI based on the
+        character’s background stories and personality, making each dialog
+        unique. After several talks, the player will have the opportunity to
+        invite the guest to extend their stay on the island.
+      </p>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/IplandCharacter.png"
+          alt="IplandCharacter"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
+      <a
+        class="block relative mt-2 w-full bg-white rounded-xl overflow-hidden"
+        style="padding-top: 54%;"
+      >
+        <img
+          src="/IplandDialog.png"
+          alt="IplandDialog"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </a>
     </div>
   </section>
 </BaseLayout>
